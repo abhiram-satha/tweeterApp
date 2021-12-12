@@ -13,7 +13,7 @@
 
 .tweet-text-area {
   border: none;
-  border-bottom: solid rgb(56, 32, 32) .25em;
+  border-bottom: solid #545149 .25em;
   color: #545149;
   background-color: #f4f1ec;
   margin: 0px;
