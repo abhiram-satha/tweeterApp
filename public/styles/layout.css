@@ -53,7 +53,7 @@ main {
 }
 
 .profile-logo {
-  border-radius: 50%;
+  padding-right: 5px;
   width: 25px;
   height: 25px;
 }
@@ -61,8 +61,8 @@ main {
 
 article.tweet-box {
   width: 588px;
-  margin: 20px 0px;
-  border: solid #545149 5px;
+  margin: 40px 0px;
+  border: solid #545149 4px;
   height: auto;
   padding: 10px;
 }
@@ -87,8 +87,17 @@ footer i {
   padding: 5px;
 }
 
-footer i:hover {
+
+i.fa-flag:hover {
   color: goldenrod;
+}
+
+i.fa-retweet:hover {
+  color: #2fb82f;
+}
+
+i.fa-heart:hover {
+  color: #e465cf
 }
 
 footer.profile-footer {
