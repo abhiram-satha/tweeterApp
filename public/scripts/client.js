@@ -36,7 +36,7 @@ $(document).ready(function() {
           profileName: userData.user.handle,
           avatar: userData.user.avatars,
           dateCreated: userData.created_at,
-          tweet: userData.content.text,
+          text: userData.content.text,
 
         }
         $('#tweets-container').append(createTweetElement(tweetInfo));
@@ -46,30 +46,46 @@ $(document).ready(function() {
     // calls createTweetElement for each tweet
     // takes return value and appends it to the tweets container
     const createTweetElement = function(tweet) {
-      let $tweet = `<article class="tweet-box">
-      <header class="profile-header">
-        <div class="profile-link">
-          <img class="profile-logo" src=${tweet.avatar}/>
-          <span class="profile-name">${tweet.name}</span>
-        </div>
-        <span class="profile-name">${tweet.profileName}</span>
-      </header>
-      <p>${tweet.tweet}</p>
-      <footer class="profile-footer">
-          <span>${tweet.dateCreated}</span>
-        <div class="tweet-icons">
-          <i class="fa-solid fa-flag"></i>
-          <i class="fa-solid fa-retweet"></i>
-          <i class="fa-solid fa-heart"></i>
-        </div>
-      </footer>
-
-    </article>`
+      const {avatar, profileName, text, dateCreated, name} = tweet
+      let $tweet = 
+      `<article class="tweet-box">
+        <header class="profile-header">
+          <div class="profile-link">
+            <img class="profile-logo" src=${avatar}/>
+            <span class="profile-name">${name}</span>
+          </div>
+          <span class="profile-name">${profileName}</span>
+        </header>
+        <p>${text}</p>
+        <footer class="profile-footer">
+          <span>${dateCreated}</span>
+          <div class="tweet-icons">
+            <i class="fa-solid fa-flag"></i>
+            <i class="fa-solid fa-retweet"></i>
+            <i class="fa-solid fa-heart"></i>
+          </div>
+        </footer>
+      </article>`
     /* Your code for creating the tweet element */
       // ...
       return $tweet;
     }
     
     renderTweets(data);
+
+    const $form = $('form')
+    $form.on('submit', function () {
+      const newTweet = $(this).serialize();
+      event.preventDefault();
+
+      $.post('/tweets', newTweet, function(event) {
+        console.log(event);
+
+        
+      })
+      .fail(function() {
+        console.log('error');
+      })
+    })
 })
 

@@ -10,6 +10,11 @@
   font-family: 'Bungee', sans-serif;
 }
 
+.tweet-button:focus {
+  box-shadow: 2px 2px 0 0 
+  #545149;
+}
+
 
 .tweet-text-area {
   border: none;
