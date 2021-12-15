@@ -44,44 +44,19 @@ $(document).ready(function () {
     /* Your code for creating the tweet element */
     // ...
     return $tweet;
-  };
-
-  //renderTweets(data);
-
-  //const $form = $("form");
-
-  // $form.on('submit', function () {
-
-  //   event.preventDefault();
-  //   const newTweet = $(this).serialize();
-
-  //   $.post('/tweets', newTweet, function(event) {
-
-  //   })
-  // })
-
-  // const loadTweets = $(function() {
-  //   const $button = $('.tweet-button');
-  //   $button.on('click', function() {
-  //     $.ajax('/tweets', {method: 'GET'})
-  //     .then(function (morePostsHtml) {
-  //       renderTweets(morePostsHtml);
-  //     })
-  //   })
-  // })
-
-  // renderTweets();
+  }
 
   const loadTweets = function () {
+
     $.ajax("/tweets", { method: "GET" }).then(function (morePostsHtml) {
-      console.log(morePostsHtml);
       renderTweets(morePostsHtml);
     });
   };
   loadTweets();
   $('#text-form').on("submit", function (event) {
       event.preventDefault();
-      if (Number($("#char-counter").val()) === 140 || $("#char-counter").val().serialize() === null) {
+     
+      if (Number($("#char-counter").val()) === 140) {
       alert("Nothing to tweet");
       return;
     } else if (Number($("#char-counter").val()) < 0) {
@@ -91,8 +66,11 @@ $(document).ready(function () {
       const newTweet = $(this).serialize();
 
       $.post("/tweets", newTweet, function (event) {
-        console.log(newTweet);
       });
+      
+      $('tweets-container').replaceWith(loadTweets());
+      $('#tweet-text').val('');
+      //loadTweets();
     }
   });
 });
