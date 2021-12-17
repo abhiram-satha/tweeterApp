@@ -5,18 +5,27 @@
  */
 const data = [];
 
+
+
 $(document).ready(function () {
+  
+  $('div.error').hide();
+
   $('#text-form').on("submit", function (event) {
     event.preventDefault();
    
     if (Number($("#char-counter").val()) === 140) {
-    alert("Nothing to tweet");
+      $('div.zero-char').show( );
+      
+      //alert("Nothing to tweet");
     return;
   } else if (Number($("#char-counter").val()) < 0) {
-    alert("Exceeded our tweet limit")
+    $('div.overlimit-char').show( );
     return;
   } else {
+    
     const newTweet = $(this).serialize();
+    
   
 
     $.ajax({url: '/tweets', method: 'POST', data: newTweet} ).then(res => {
@@ -27,6 +36,10 @@ $(document).ready(function () {
   
   }
 });
+
+$('#text-form').on('input', function() {
+  $('div.error').hide();
+})
 
   const createTweetElement = function (tweet) {
     const { avatar, profileName, text, dateCreated, name } = tweet;
@@ -54,6 +67,7 @@ $(document).ready(function () {
   }
   const renderTweets = function(tweets) {
     
+    //makes the container empty and removes old tweets
     const container = $('#tweets-container').html('')
 
     for (const userData of tweets) {
@@ -69,11 +83,15 @@ $(document).ready(function () {
           container.prepend(tweetElement);
         }
         $('#tweet-text').val('');
+       
+
   }
   const loadTweets = function () {
 
     $.ajax({url: "/tweets", method: "GET" }).then(function (allTweets) {
       renderTweets(allTweets);
+      let counter = 140;
+      $('#char-counter').val(counter)
     });
   };
 

@@ -58,6 +58,12 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
+        <div class='error zero-char'>
+            <p>Nothing to Tweet</p>
+        </div>
+        <div class='error overlimit-char'>
+          <p>Exceeded our limit</p>
+        </div>
         <h3>Compose Tweet</h3>
         <div class='new-tweet'>
           <form method="POST" action='/tweets' id="text-form">

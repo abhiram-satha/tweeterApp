@@ -58,6 +58,12 @@ main {
   height: 25px;
 }
 
+div.error {
+  width: 75%;
+  color: #D8000C;
+  background-color: #FFD2D2;
+  border: dotted 2px rgb(124, 6, 6)
+}
 
 article.tweet-box {
   width: 588px;
