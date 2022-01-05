@@ -111,3 +111,30 @@ footer.profile-footer {
   justify-content: space-between;
   font-size: 10px;
 }
+
+@media (min-width: 1024px) {
+  body {
+    width: 100%
+  }
+
+  header .profile {
+    width: 35%;
+    margin: 25px 0 0 40px;
+    position: fixed;
+    top: 170px;
+    height: 50%;
+    float: left;
+    z-index: -1;
+  }
+
+  main {
+    width: 50%;
+    margin-top: 75px;
+    position: absolute;
+    top: 45px;
+    right: 75px;
+    z-index: -1;
+  }
+
+ 
+}
