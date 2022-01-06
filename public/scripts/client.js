@@ -8,9 +8,13 @@ const data = [];
 $(document).ready(function () {
   $("div.error").slideUp(1);
 
+  //when the user clicks the Tweet button to generate a new tweet 
+
+  
+  
   $("#text-form").on("submit", function (event) {
     event.preventDefault();
-
+    
     if (Number($("#char-counter").val()) === 140) {
       $("div.zero-char").slideDown();
 
@@ -20,16 +24,17 @@ $(document).ready(function () {
       return;
     } else {
       const newTweet = $(this).serialize();
-
       $.ajax({ url: "/tweets", method: "POST", data: newTweet }).then((res) => {
         loadTweets();
       });
     }
   });
 
+  //slide up the error message when the user starts to type
   $("#text-form").on("input", function () {
     $("div.error").slideUp();
   });
+
 
   const escape = function (str) {
     let div = document.createElement("div");
@@ -78,6 +83,7 @@ $(document).ready(function () {
     }
     $("#tweet-text").val("");
   };
+
   const loadTweets = function () {
     $.ajax({ url: "/tweets", method: "GET" }).then(function (allTweets) {
       renderTweets(allTweets);

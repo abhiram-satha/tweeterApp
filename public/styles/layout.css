@@ -28,7 +28,7 @@ main {
   text-align: center;
   margin-left: auto;
   margin-right: auto;
-
+  padding-top: 25px;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -39,6 +39,9 @@ main {
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+
+
 
 .profile-link{
   display: flex;
@@ -58,8 +61,12 @@ main {
   height: 25px;
 }
 
+.profile h2 {
+  font-size: 1.25em;
+}
+
 div.error {
-  width: 75%;
+  width: 100%;
   color: #D8000C;
   background-color: #FFD2D2;
   border: dotted 2px rgb(124, 6, 6)
@@ -135,6 +142,16 @@ footer.profile-footer {
     right: 75px;
     z-index: -1;
   }
+  
+  .tweet-arrows {
+  position: relative;
+  animation: myfirst 1s infinite;
+  animation-direction: alternate;
+  }
 
+  @keyframes myfirst {
+    0%   {top: 10px}
+    100% {top: 0px;}
+  }
  
 }
