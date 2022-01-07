@@ -1,3 +1,6 @@
+
+$border-color: #545149;
+
 .tweet-button {
   background-color: #4056A1;
   color: #FFFFFF;
@@ -7,17 +10,18 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  font-family: "Bungee", sans-serif;
+  font-family: 'Bungee', sans-serif;
 }
 
 .tweet-button:focus {
-  box-shadow: 2px 2px 0 0 #545149;
+  box-shadow: 2px 2px 0 0 $border-color
 }
+
 
 .tweet-text-area {
   border: none;
-  border-bottom: solid #545149 0.25em;
-  color: #545149;
+  border-bottom: solid $border-color .25em;
+  color: $border-color;
   background-color: #f4f1ec;
   margin: 0px;
   width: 588px;
@@ -29,14 +33,13 @@
   display: block;
   text-align: left;
 }
-
 .new-tweet {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
 }

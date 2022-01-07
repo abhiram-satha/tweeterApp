@@ -1,0 +1,15 @@
+header .profile {
+  height: 500px;
+  width: 100%;
+  padding-top: 120px;
+  background-color: #a9b7e7;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+}

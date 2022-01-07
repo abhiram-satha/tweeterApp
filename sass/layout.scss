@@ -89,13 +89,17 @@ article p {
   text-align: left;
 }
 
-footer i {
+footer {
+  i {
   padding: 5px;
-}
-footer.profile-footer {
-  display: flex;
-  justify-content: space-between;
-  font-size: 10px;
+  }
+
+  .profile-footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+  }
+  
 }
 
 i.fa-flag:hover {
@@ -109,6 +113,8 @@ i.fa-retweet:hover {
 i.fa-heart:hover {
   color: #e465cf;
 }
+
+
 
 @media (min-width: 1024px) {
   body {

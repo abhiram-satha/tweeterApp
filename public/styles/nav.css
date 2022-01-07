@@ -1,20 +1,19 @@
 nav {
-    height: 120px;
-    background-color: #4056A1;
-    color: #FFFFFF;
-    padding-top: 3em;
-    position: fixed;
-    width: 100%;
+  height: 120px;
+  background-color: #4056A1;
+  color: #FFFFFF;
+  padding-top: 3em;
+  position: fixed;
+  width: 100%;
 }
-
 nav span {
-  font-family: 'Bungee', sans-serif;
+  font-family: "Bungee", sans-serif;
   padding-left: 1.5em;
   font-size: 1.5em;
 }
 
 svg {
-  height: .75em;
+  height: 0.75em;
   width: auto;
   color: orangered;
 }
@@ -24,7 +23,7 @@ svg {
   flex-direction: column;
   align-items: center;
   padding-right: 1.5em;
-  font-size: .75em;
+  font-size: 0.75em;
 }
 
 .nav-container {
