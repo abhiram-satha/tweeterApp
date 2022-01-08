@@ -9,8 +9,6 @@ $(document).ready(function() {
        $('#char-counter').css('color', '#545149');
        
      }
-     
-    
      })
      
  });
