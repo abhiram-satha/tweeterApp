@@ -114,4 +114,23 @@ $(document).ready(function () {
   };
 
   loadTweets();
+
+  //Implementing a Back to the Top of the Page button
+
+  const scrollWheel = 100;
+
+  $(window).on('scroll', function() {
+    console.log($(window.scrollY));
+    if ( $(window.scrollY >= scrollWheel)){
+      $(".fa-angle-double-up").fadeIn();
+    } 
+    else  {
+      $(".fa-angle-double-up").fadeOut();
+    }
+  })
+
+  $(".fa-angle-double-up").on('click', function() {
+    $('html, body').animate({
+      scrollTop: 0 }, 'fast');
+  })
 });

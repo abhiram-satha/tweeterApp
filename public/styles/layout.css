@@ -123,6 +123,17 @@ i.fa-heart:hover {
   color: #e465cf;
 }
 
+.fa-angle-double-up {
+  position: fixed;
+  right: 15px;
+  bottom: 25px;
+  display: none
+}
+
+.fa-angle-double-up:hover {
+  color: rgb(92, 92, 190)
+}
+
 /* Desktop View */
 @media (min-width: 1024px) {
   body {
