@@ -2,4 +2,3 @@ node_modules/
 .env
 .DS_Store
 examples/
-public/scripts/client copy.js

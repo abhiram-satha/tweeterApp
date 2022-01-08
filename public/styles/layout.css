@@ -98,7 +98,12 @@ footer.profile-footer {
   font-size: 10px;
 }
 
+/* Tweet Icons */
 i.fa-flag:hover {
+  color: goldenrod;
+}
+
+.colored-flag {
   color: goldenrod;
 }
 
@@ -106,10 +111,19 @@ i.fa-retweet:hover {
   color: #2fb82f;
 }
 
+.colored-retweet {
+  color: #2fb82f
+}
+
 i.fa-heart:hover {
   color: #e465cf;
 }
 
+.colored-heart {
+  color: #e465cf;
+}
+
+/* Desktop View */
 @media (min-width: 1024px) {
   body {
     width: 100%;

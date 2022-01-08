@@ -3,16 +3,13 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-const data = [];
 
 $(document).ready(function () {
   $("div.error").slideUp(1);
+  $('.new-tweet').slideUp(1);
 
   //when the user clicks the Tweet button to generate a new tweet 
-
-  
-  
-  $("#text-form").on("submit", function (event) {
+  $("#text-form").on("submit", function(event) {
     event.preventDefault();
     
     if (Number($("#char-counter").val()) === 140) {
@@ -24,11 +21,20 @@ $(document).ready(function () {
       return;
     } else {
       const newTweet = $(this).serialize();
-      $.ajax({ url: "/tweets", method: "POST", data: newTweet }).then((res) => {
+      $.ajax({ url: "/tweets", method: "POST", data: newTweet }).then(() => {
         loadTweets();
       });
     }
   });
+
+  $(".right-nav-container").on("click", function() {
+    
+  });
+
+  $(".right-nav-container").on("click", function() {
+    $('.new-tweet').slideToggle();
+    $('.tweet-text-area').focus();
+  })
 
   //slide up the error message when the user starts to type
   $("#text-form").on("input", function () {
@@ -57,14 +63,29 @@ $(document).ready(function () {
                 <footer class="profile-footer">
                   <span>${timeago.format(dateCreated)}</span>
                   <div class="tweet-icons">
-                    <i class="fa-solid fa-flag"></i>
+                    <i class="fa-solid fa-flag "></i>
                     <i class="fa-solid fa-retweet"></i>
                     <i class="fa-solid fa-heart"></i>
                   </div>
                 </footer>`;
     let result = $tweet.append(html);
+    
+    result.find(".fa-flag").on('click', function() {
+      console.log('clicked');
+      $(this).toggleClass('colored-flag')
+    });
+    result.find(".fa-retweet").on('click', function() {
+      console.log('clicked');
+      $(this).toggleClass('colored-retweet')
+    });
+    result.find(".fa-heart").on('click', function() {
+      console.log('clicked');
+      $(this).toggleClass('colored-heart')
+    });
     return result;
   };
+
+
   const renderTweets = function (tweets) {
     //makes the container empty and removes old tweets
     const container = $("#tweets-container").html("");
