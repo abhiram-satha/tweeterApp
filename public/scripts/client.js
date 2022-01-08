@@ -28,10 +28,6 @@ $(document).ready(function () {
   });
 
   $(".right-nav-container").on("click", function() {
-    
-  });
-
-  $(".right-nav-container").on("click", function() {
     $('.new-tweet').slideToggle();
     $('.tweet-text-area').focus();
   })
@@ -115,22 +111,22 @@ $(document).ready(function () {
 
   loadTweets();
 
-  //Implementing a Back to the Top of the Page button
+  //Implementing a Back to the Top of the Page Image
 
   const scrollWheel = 100;
 
+  const $upArrow = $(".fa-caret-square-up");
+
   $(window).on('scroll', function() {
-    console.log($(window.scrollY));
     if ( $(window.scrollY >= scrollWheel)){
-      $(".fa-angle-double-up").fadeIn();
-    } 
-    else  {
-      $(".fa-angle-double-up").fadeOut();
+      $upArrow.fadeIn();
+    } else {
+      $upArrow.fadeOut();
     }
   })
 
-  $(".fa-angle-double-up").on('click', function() {
-    $('html, body').animate({
-      scrollTop: 0 }, 'fast');
+  $upArrow.on('click', function() {
+    $upArrow.fadeOut('fast');
+    $('html').animate({scrollTop: 0}, 'fast');
   })
 });

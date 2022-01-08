@@ -123,14 +123,14 @@ i.fa-heart:hover {
   color: #e465cf;
 }
 
-.fa-angle-double-up {
+.fa-caret-square-up{
   position: fixed;
   right: 15px;
   bottom: 25px;
   display: none
 }
 
-.fa-angle-double-up:hover {
+.fa-caret-square-up:hover {
   color: rgb(92, 92, 190)
 }
 
@@ -164,6 +164,7 @@ i.fa-heart:hover {
     animation: myfirst 1s infinite;
     animation-direction: alternate;
   }
+
 
   @keyframes myfirst {
     0% {
